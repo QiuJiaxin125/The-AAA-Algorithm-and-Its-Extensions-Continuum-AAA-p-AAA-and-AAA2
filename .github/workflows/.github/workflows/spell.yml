@@ -1,0 +1,11 @@
+name: Spell Check
+on: [push]
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: codespell-project/actions-codespell@v2
+        with:
+          skip: ./.git
+          ignore_words_file: .wordlist.txt
